@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+ 
+     <h:head>
+ 
+     </h:head>
+ 
+     <h:body>
+ 
+         <h:form id="tableau">
+            <p:dataTable id="dataTable" var="data" value="#{iot.listeData}">
+                <p:column headerText="Id">
+                    <h:outputText value="#{data.idDataIOT}" />
+               </p:column>
+               <p:column headerText="Température">
+                   <h:outputText value="#{data.temp}" />
+               </p:column>
+                <p:column headerText="Hydro">
+                    <h:outputText value="#{data.hydro}" />
+               </p:column>
+                <p:column>
+                    <p:commandButton action="#{iot.supprimer(data.idDataIOT)}" value="Supprimer" update="tableau"></p:commandButton>
+                    <p:commandButton value="Modifier"></p:commandButton>
+               </p:column>
+            </p:dataTable> 
+             
+        </h:form>
+         
+        <h:form id="formulaire">
+            <h:outputLabel for="Temp" value="Température:" />
+            <p:inputText id="Temp" required="true" value="#{iot.temp}"/>
+            
+            <h:outputLabel for="Hydro" value="Hydro:" />
+            <p:inputText id="Hydro" required="true" value="#{iot.hydro}"/>
+            
+            <p:commandButton value="Valider" action="#{iot.valider}" update=":tableau"/>
+        </h:form>
+ 
+     </h:body>
+</html>
+

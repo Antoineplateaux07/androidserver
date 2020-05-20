@@ -1,0 +1,6 @@
+com\metinet\rest\DataIoTResource.class
+com\metinet\rest\JAXRSConfiguration.class
+com\metinet\beans\Data.class
+com\metinet\controller\Iot.class
+com\metinet\mongodb\DataIotDb.class
+com\metinet\mongodb\MongoDbProvider.class
